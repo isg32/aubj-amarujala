@@ -12,7 +12,7 @@ const EligibilitySection = () => {
           Examinations (2026) from UP Board, CBSE, or ICSE are eligible.
         </p>
         <a
-          href="#register"
+          href="/register"
           className="gradient-cta inline-flex items-center gap-2 text-primary-foreground font-body font-semibold px-10 py-4 rounded-full text-lg shadow-cta hover:opacity-90 transition-opacity"
         >
           Register Now <ChevronRight className="w-5 h-5" />
