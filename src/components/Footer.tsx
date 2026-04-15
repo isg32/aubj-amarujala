@@ -2,7 +2,7 @@ import logo from "@/assets/aubj-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground pt-14 pb-6" id="register">
+    <footer className="bg-foreground pt-14 pb-6">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
@@ -20,10 +20,10 @@ const Footer = () => {
             <h4 className="font-heading font-bold text-primary-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2.5 font-body text-sm">
               {[
-                { label: "Why Attend?", href: "#why-attend" },
-                { label: "About the Event", href: "#about" },
-                { label: "Eligibility", href: "#eligibility" },
-                { label: "Register Now", href: "#register" },
+                { label: "Why Attend?", href: "/#why-attend" },
+                { label: "About the Event", href: "/#about" },
+                { label: "Eligibility", href: "/#eligibility" },
+                { label: "Register Now", href: "/register" },
               ].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-primary-foreground/70 hover:text-accent transition-colors">
