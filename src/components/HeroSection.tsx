@@ -1,10 +1,9 @@
-import heroImage from "@/assets/hero-ceremony.jpg";
+import heroImage from "@/assets/hero-ceremony.avif";
 import { ChevronRight, Star } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Bhavishya Jyoti Samman Ceremony" className="w-full h-full object-cover" width={1920} height={1080} />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
@@ -36,7 +35,7 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#register"
+              href="/register"
               className="gradient-cta inline-flex items-center gap-2 text-primary-foreground font-body font-semibold px-8 py-4 rounded-full text-lg shadow-cta hover:opacity-90 transition-opacity"
             >
               Register Now <ChevronRight className="w-5 h-5" />
