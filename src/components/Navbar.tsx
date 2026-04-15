@@ -12,7 +12,7 @@ const Navbar = () => {
           </div>
         </div>
         <a
-          href="#register"
+          href="/register"
           className="gradient-cta text-primary-foreground font-body font-semibold px-6 py-2.5 rounded-full text-sm shadow-cta hover:opacity-90 transition-opacity"
         >
           Register Now

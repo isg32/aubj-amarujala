@@ -1,36 +1,50 @@
-import { Trophy, Medal, Users, Newspaper, GraduationCap, BookOpen } from "lucide-react";
+import { Trophy, Medal, Users, Newspaper, GraduationCap, BookOpen, Mic, Award, Handshake, Camera } from "lucide-react";
+import eventImage from "@/assets/aubj-event.avif";
 
 const benefits = [
-  "Medal of Excellence & Certificate of Merit",
-  "Career counseling from IAS/IPS officers",
-  "Scholarship opportunities from partner universities",
-  "Networking with toppers from across the state",
-  "Media coverage in Amar Ujala newspaper",
-  "Invitation to exclusive workshops & seminars",
+  { icon: Medal, text: "Medal of Excellence & Certificate of Merit" },
+  { icon: Mic, text: "Career counseling sessions with IAS/IPS officers & renowned educationists" },
+  { icon: GraduationCap, text: "Scholarship opportunities from partner universities & institutions" },
+  { icon: Handshake, text: "Networking with toppers from across the state" },
+  { icon: Camera, text: "Media coverage in Amar Ujala — India's leading Hindi daily" },
+  { icon: Award, text: "Invitation to exclusive workshops, seminars & mentorship programs" },
 ];
 
 const AboutSection = () => {
   return (
     <section className="py-20 bg-secondary" id="about">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <p className="text-sm font-body font-semibold text-primary uppercase tracking-widest mb-2">About the Initiative</p>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            A Legacy of Celebrating Merit
+          </h2>
+          <p className="max-w-2xl mx-auto font-body text-foreground/70">
+            For years, Amar Ujala has stood at the forefront of honoring academic brilliance across North India.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left - About text */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-              About the Event
-            </h2>
-            <p className="font-body text-foreground/80 leading-relaxed mb-4">
-              <strong>Amar Ujala Bhavishya Jyoti Vidyarthi Samman</strong> is one of the most
+            <p className="font-body text-foreground/80 leading-relaxed mb-4 text-lg">
+              <strong className="text-foreground">Amar Ujala Bhavishya Jyoti Vidyarthi Samman</strong> is one of the most
               prestigious student recognition programs in North India. Since its inception,
-              it has celebrated the hard work and dedication of thousands of meritorious
-              students across Uttar Pradesh, Uttarakhand, Haryana, Himachal Pradesh,
+              it has celebrated the hard work and dedication of <strong className="text-foreground">thousands of meritorious
+              students</strong> across Uttar Pradesh, Uttarakhand, Haryana, Himachal Pradesh,
               and Jammu & Kashmir.
             </p>
-            <p className="font-body text-foreground/80 leading-relaxed mb-8">
-              The ceremony felicitates toppers who have scored 70% and above in their
-              10th and 12th board examinations. Distinguished guests including IAS/IPS
-              officers, renowned educationists, and community leaders grace the event to
-              inspire the next generation.
+            <p className="font-body text-foreground/80 leading-relaxed mb-4 text-lg">
+              The ceremony felicitates toppers who have scored <strong className="text-foreground">70% and above</strong> in their
+              10th and 12th board examinations. Distinguished guests including <strong className="text-foreground">IAS/IPS
+              officers, renowned educationists, and community leaders</strong> grace the event to
+              inspire the next generation of achievers.
+            </p>
+            <p className="font-body text-foreground/80 leading-relaxed mb-8 text-lg">
+              More than just an award ceremony, Bhavishya Jyoti Samman is a <strong className="text-foreground">movement</strong> — 
+              it sparks ambition, builds confidence, and connects young minds with mentors who 
+              shape futures. Every year, the event grows larger, touching more lives and more cities.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -46,22 +60,40 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right - What You Get card */}
-          <div className="bg-card rounded-2xl p-8 shadow-card border border-border">
-            <div className="flex items-center gap-3 mb-6">
-              <Trophy className="w-7 h-7 text-accent" />
-              <h3 className="text-2xl font-heading font-bold text-foreground">What You Get</h3>
+          {/* Right - Event Image */}
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden shadow-card border border-border">
+              <img
+                src={eventImage}
+                alt="Bhavishya Jyoti Samman Event"
+                className="w-full h-[400px] lg:h-[500px] object-cover"
+              />
             </div>
-            <ul className="space-y-4">
-              {benefits.map((benefit) => (
-                <li key={benefit} className="flex items-start gap-3">
-                  <span className="mt-1 w-6 h-6 rounded-full gradient-cta flex-shrink-0 flex items-center justify-center">
-                    <span className="w-2 h-2 rounded-full bg-primary-foreground" />
-                  </span>
-                  <span className="font-body text-foreground/80">{benefit}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground rounded-xl px-6 py-3 shadow-cta">
+              <p className="text-2xl font-heading font-bold">55,000+</p>
+              <p className="text-xs font-body opacity-90">Students Honored</p>
+            </div>
+          </div>
+        </div>
+
+        {/* What You Get - Scaled Up */}
+        <div className="bg-card rounded-3xl p-10 md:p-14 shadow-card border border-border">
+          <div className="flex items-center gap-3 mb-2">
+            <Trophy className="w-8 h-8 text-accent" />
+            <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">What You Get</h3>
+          </div>
+          <p className="font-body text-foreground/60 mb-10 max-w-xl">
+            Every selected student receives a comprehensive recognition package designed to celebrate their achievement and fuel their future.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-start gap-4 bg-secondary/60 rounded-xl p-5 border border-border/50 hover:border-primary/30 transition-colors">
+                <span className="mt-0.5 w-10 h-10 rounded-lg gradient-cta flex-shrink-0 flex items-center justify-center shadow-sm">
+                  <Icon className="w-5 h-5 text-primary-foreground" />
+                </span>
+                <span className="font-body text-foreground/80 leading-relaxed">{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
