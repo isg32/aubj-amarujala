@@ -3,19 +3,19 @@ import logo from "@/assets/aubj-logo.png";
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
-      <div className="container flex items-center justify-between py-3">
-        <div className="flex items-center gap-3">
-          <img src={logo} alt="AUBJ Logo" className="h-10 w-10 object-contain" />
-          <div>
-            <p className="text-xs font-body font-medium text-primary-foreground/70 uppercase tracking-wider">Presented by Amar Ujala</p>
-            <p className="text-sm font-heading font-bold text-primary-foreground">Bhavishya Jyoti Samman 2026</p>
+      <div className="container flex items-center justify-between py-2.5 sm:py-3 gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <img src={logo} alt="AUBJ Logo" className="h-9 w-9 sm:h-10 sm:w-10 object-contain flex-shrink-0" />
+          <div className="min-w-0">
+            <p className="hidden sm:block text-xs font-body font-medium text-primary-foreground/70 uppercase tracking-wider">Presented by Amar Ujala</p>
+            <p className="text-xs sm:text-sm font-heading font-bold text-primary-foreground truncate">Bhavishya Jyoti Samman 2026</p>
           </div>
         </div>
         <a
           href="/register"
-          className="gradient-cta text-primary-foreground font-body font-semibold px-6 py-2.5 rounded-full text-sm shadow-cta hover:opacity-90 transition-opacity"
+          className="gradient-cta text-primary-foreground font-body font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-cta hover:opacity-90 transition-opacity flex-shrink-0"
         >
-          Register Now
+          Register
         </a>
       </div>
     </nav>

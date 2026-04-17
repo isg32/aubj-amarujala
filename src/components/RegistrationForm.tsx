@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import confetti from "canvas-confetti";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, Sparkles, PartyPopper } from "lucide-react";
 import { STATES, DISTRICTS, type StateName } from "@/lib/registrationData";
 
 // 🔧 Replace with the deployed Google Apps Script Web App URL
@@ -120,17 +121,51 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
 
   const containerClass =
     variant === "card"
-      ? "bg-card rounded-2xl p-6 md:p-8 shadow-card border border-border"
-      : "bg-card/95 backdrop-blur-md rounded-2xl p-6 shadow-cta border border-border";
+      ? "bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-card border border-border"
+      : "bg-card/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 shadow-cta border border-border";
+
+  useEffect(() => {
+    if (!submitted) return;
+    const fire = (particleRatio: number, opts: confetti.Options) => {
+      confetti({
+        origin: { y: 0.6 },
+        particleCount: Math.floor(200 * particleRatio),
+        spread: 70,
+        startVelocity: 35,
+        colors: ["#dc2626", "#f59e0b", "#fbbf24", "#ffffff", "#7c3aed"],
+        ...opts,
+      });
+    };
+    fire(0.25, { spread: 26, startVelocity: 55 });
+    fire(0.2, { spread: 60 });
+    fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+    fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+    fire(0.1, { spread: 120, startVelocity: 45 });
+  }, [submitted]);
 
   if (submitted) {
     return (
-      <div className={containerClass + " text-center"}>
-        <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-2xl font-heading font-bold text-foreground mb-2">You're Registered!</h3>
-        <p className="font-body text-foreground/70">
-          Thank you for registering for Bhavishya Jyoti Samman 2026. We'll be in touch soon.
-        </p>
+      <div className={containerClass + " text-center relative overflow-hidden animate-scale-in"}>
+        <div className="absolute inset-0 gradient-cta opacity-5 pointer-events-none" />
+        <div className="relative">
+          <div className="relative inline-block mb-4">
+            <div className="absolute inset-0 gradient-cta rounded-full blur-xl opacity-50 animate-pulse" />
+            <div className="relative w-20 h-20 rounded-full gradient-cta flex items-center justify-center mx-auto shadow-cta">
+              <PartyPopper className="w-10 h-10 text-primary-foreground" />
+            </div>
+          </div>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Sparkles className="w-5 h-5 text-accent animate-pulse" />
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground">Congratulations!</h3>
+            <Sparkles className="w-5 h-5 text-accent animate-pulse" />
+          </div>
+          <p className="font-body text-foreground/70 mb-4">
+            You're officially registered for <strong className="text-primary">Bhavishya Jyoti Samman 2026</strong>.
+          </p>
+          <p className="text-sm font-body text-foreground/60">
+            Our team will reach out to you soon with further details. Get ready to shine! ✨
+          </p>
+        </div>
       </div>
     );
   }
