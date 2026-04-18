@@ -233,7 +233,7 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1.5">
           <Label htmlFor="phone" className="text-sm">Mobile (10 digits) *</Label>
-          <Input id="phone" inputMode="numeric" placeholder="9876543210"
+          <Input id="phone" inputMode="numeric" placeholder="Enter your 10-digit mobile number"
             value={form.phoneNumber}
             onChange={(e) => set("phoneNumber", e.target.value.replace(/\D/g, "").slice(0, 10))}
             maxLength={10} />
