@@ -38,9 +38,18 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-primary-foreground mb-4">Contact</h4>
             <ul className="space-y-2.5 font-body text-sm text-primary-foreground/70">
-              <li>Amar Ujala Publications Ltd.</li>
-              <li>Email: bhavishyajyoti@amarujala.com</li>
-              <li>Website: www.amarujala.com</li>
+              <li>
+                Contact:{" "}
+                <a href="tel:18001211166" className="hover:text-accent transition-colors">
+                  1800 121 1166
+                </a>
+              </li>
+              <li>
+                Email:{" "}
+                <a href="mailto:events@bs.amarujala.com" className="hover:text-accent transition-colors">
+                  events@bs.amarujala.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
