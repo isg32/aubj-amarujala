@@ -10,7 +10,7 @@ import { Send, Sparkles, PartyPopper } from "lucide-react";
 import { STATES, DISTRICTS, type StateName } from "@/lib/registrationData";
 
 // 🔧 Replace with the deployed Google Apps Script Web App URL
-const APPS_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzUPTiLTJg6l7lkzVjg5D_QD2NZtvILKZ7Ukmr8JX2lOv9ogR9TJD495yKQoA-65YIN/exec";
 
 type FormState = {
   studentName: string;
