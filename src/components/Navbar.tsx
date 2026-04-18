@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container flex items-center justify-between py-2.5 sm:py-3 gap-3">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <img src={logo} alt="Amar Ujala Logo" className="h-9 sm:h-11 w-auto object-contain rounded-md flex-shrink-0" />
+          <img src={logo} alt="Amar Ujala Logo" className="h-9 sm:h-11 w-auto object-contain flex-shrink-0" />
           <div className="min-w-0">
             <p className="hidden sm:block text-[10px] font-body font-medium text-foreground/60 uppercase tracking-wider">Presented by Amar Ujala</p>
             <p className="text-xs sm:text-sm font-heading font-bold text-foreground truncate">Bhavishya Jyoti Samman 2026</p>
