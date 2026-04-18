@@ -83,7 +83,7 @@ const AboutSection = () => {
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground">What You Get</h3>
           </div>
           <p className="font-body text-sm sm:text-base text-foreground/60 mb-8 sm:mb-10 max-w-xl">
-            Every selected student receives a comprehensive recognition package designed to celebrate their achievement and fuel their future.
+            Selected students get the opportunity to receive recognition and support aimed at celebrating their achievements and encouraging their future growth.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {benefits.map(({ icon: Icon, text }) => (
