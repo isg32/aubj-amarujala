@@ -44,18 +44,18 @@ const HeroSection = () => {
               alt="AUBJ Logo"
               className="h-28 sm:h-36 md:h-44 lg:h-52 w-auto object-contain mb-4 sm:mb-6 mx-auto lg:mx-0"
             />
-            <div className="inline-flex items-center gap-2 bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6">
+            <div className="inline-flex items-center gap-2 bg-background/70 backdrop-blur-md border border-foreground/15 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 shadow-sm">
               <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
-              <span className="text-xs sm:text-sm font-body text-foreground/80">Presented by Amar Ujala</span>
+              <span className="text-xs sm:text-sm font-body font-medium text-foreground">Presented by Amar Ujala</span>
             </div>
 
-            <p className="text-lg sm:text-xl md:text-2xl font-heading italic text-foreground/90 mb-3 sm:mb-4">
+            <p className="text-lg sm:text-xl md:text-2xl font-heading italic text-foreground mb-3 sm:mb-4 font-semibold drop-shadow-sm">
               Honoring Merit, Empowering Dreams!
             </p>
-            <p className="text-sm sm:text-base md:text-lg font-body text-foreground/70 mb-1 sm:mb-2">
+            <p className="text-sm sm:text-base md:text-lg font-body text-foreground/85 mb-1 sm:mb-2 font-medium">
               A grand stage to celebrate the toppers of 10th & 12th Classes
             </p>
-            <p className="text-sm sm:text-base md:text-lg font-body text-foreground/70">
+            <p className="text-sm sm:text-base md:text-lg font-body text-foreground/85 font-medium">
               (State Boards • CBSE • ICSE)
             </p>
           </div>
