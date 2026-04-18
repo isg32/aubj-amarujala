@@ -9,7 +9,7 @@ const EligibilitySection = () => {
         </h2>
         <p className="text-base sm:text-lg font-body text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
           Students who have scored <strong className="text-foreground">70% or above</strong> in their Class 10th or 12th Board
-          Examinations (2026) from UP Board, CBSE, or ICSE are eligible.
+          Examinations (2026) from State Boards, CBSE, or ICSE are eligible.
         </p>
         <a
           href="/register"

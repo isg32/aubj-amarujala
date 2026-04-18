@@ -24,8 +24,7 @@ type FormState = {
   district: string;
   preBoardPercent: string;
   expectedScore: string;
-  confirmAccurate: boolean;
-  agreeTerms: boolean;
+  consent: boolean;
 };
 
 const initialState: FormState = {
@@ -40,8 +39,7 @@ const initialState: FormState = {
   district: "",
   preBoardPercent: "",
   expectedScore: "",
-  confirmAccurate: false,
-  agreeTerms: false,
+  consent: false,
 };
 
 interface Props {
@@ -71,12 +69,15 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
     if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return "Please enter a valid email.";
     if (!form.state) return "Please select your state.";
     if (!form.district) return "Please select your district.";
-    const pre = Number(form.preBoardPercent);
-    const exp = Number(form.expectedScore);
-    if (!form.preBoardPercent || isNaN(pre) || pre < 0 || pre > 100) return "Pre-Board % must be between 0 and 100.";
-    if (!form.expectedScore || isNaN(exp) || exp < 0 || exp > 100) return "Expected Score % must be between 0 and 100.";
-    if (!form.confirmAccurate) return "Please confirm the information is accurate.";
-    if (!form.agreeTerms) return "Please agree to the terms & conditions.";
+    if (form.preBoardPercent) {
+      const pre = Number(form.preBoardPercent);
+      if (isNaN(pre) || pre < 0 || pre > 100) return "Pre-Board % must be between 0 and 100.";
+    }
+    if (form.expectedScore) {
+      const exp = Number(form.expectedScore);
+      if (isNaN(exp) || exp < 0 || exp > 100) return "Expected/Announced Board Score % must be between 0 and 100.";
+    }
+    if (!form.consent) return "Please provide your consent to proceed.";
     return null;
   };
 
@@ -105,8 +106,7 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
           district: form.district,
           preBoardPercent: form.preBoardPercent,
           expectedScore: form.expectedScore,
-          confirmAccurate: form.confirmAccurate,
-          agreeTerms: form.agreeTerms,
+          consent: form.consent,
           submittedAt: new Date().toISOString(),
         }),
       });
@@ -268,30 +268,23 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
 
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1.5">
-          <Label htmlFor="pre" className="text-sm">Pre-Board % *</Label>
+          <Label htmlFor="pre" className="text-sm">Pre-Board %</Label>
           <Input id="pre" type="number" min={0} max={100} step="0.01" placeholder="e.g. 85"
             value={form.preBoardPercent} onChange={(e) => set("preBoardPercent", e.target.value)} />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="exp" className="text-sm">Expected Board Score % *</Label>
+          <Label htmlFor="exp" className="text-sm">Expected/ Announced Board Score %</Label>
           <Input id="exp" type="number" min={0} max={100} step="0.01" placeholder="e.g. 92"
             value={form.expectedScore} onChange={(e) => set("expectedScore", e.target.value)} />
         </div>
       </div>
 
-      <div className="space-y-2 pt-1">
+      <div className="pt-1">
         <label className="flex items-start gap-2 cursor-pointer">
-          <Checkbox checked={form.confirmAccurate}
-            onCheckedChange={(v) => set("confirmAccurate", v === true)} className="mt-0.5" />
+          <Checkbox checked={form.consent}
+            onCheckedChange={(v) => set("consent", v === true)} className="mt-0.5" />
           <span className="text-xs font-body text-foreground/80">
-            I confirm that the information provided is accurate.
-          </span>
-        </label>
-        <label className="flex items-start gap-2 cursor-pointer">
-          <Checkbox checked={form.agreeTerms}
-            onCheckedChange={(v) => set("agreeTerms", v === true)} className="mt-0.5" />
-          <span className="text-xs font-body text-foreground/80">
-            I agree to the terms & conditions and communication from Amar Ujala.
+            I confirm that the information provided by me is true to the best of my knowledge. I give my consent for this information to be used for future communication purposes. I Agree.
           </span>
         </label>
       </div>
