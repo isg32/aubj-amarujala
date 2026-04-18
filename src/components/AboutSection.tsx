@@ -3,10 +3,10 @@ import eventImage from "@/assets/aubj-event.avif";
 
 const benefits = [
   { icon: Medal, text: "Medal of Excellence & Certificate of Merit" },
-  { icon: Mic, text: "Career counseling sessions with IAS/IPS officers & renowned educationists" },
+  { icon: Mic, text: "Guidance sessions from IAS/IPS officers and renowned educationists" },
   { icon: GraduationCap, text: "Scholarship opportunities from partner universities & institutions" },
   { icon: Handshake, text: "Networking with toppers from across the state" },
-  { icon: Camera, text: "Media coverage in Amar Ujala — India's leading Hindi daily" },
+  { icon: Camera, text: "Opportunity to get media coverage in Amar Ujala" },
   { icon: Award, text: "Invitation to exclusive workshops, seminars & mentorship programs" },
 ];
 
@@ -83,7 +83,7 @@ const AboutSection = () => {
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground">What You Get</h3>
           </div>
           <p className="font-body text-sm sm:text-base text-foreground/60 mb-8 sm:mb-10 max-w-xl">
-            Every selected student receives a comprehensive recognition package designed to celebrate their achievement and fuel their future.
+            Selected students get the opportunity to receive recognition and support aimed at celebrating their achievements and encouraging their future growth.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {benefits.map(({ icon: Icon, text }) => (
