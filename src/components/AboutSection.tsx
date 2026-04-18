@@ -63,7 +63,7 @@ const AboutSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-2 sm:gap-3">
-              {["UP Board", "CBSE", "ICSE"].map((board) => (
+              {["State Boards", "CBSE", "ICSE"].map((board) => (
                 <span
                   key={board}
                   className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-body text-xs sm:text-sm font-medium text-foreground"

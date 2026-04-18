@@ -1,4 +1,4 @@
-import { Award, GraduationCap, Rocket, Users } from "lucide-react";
+import { Award, GraduationCap, Users } from "lucide-react";
 
 const highlights = [
   {
@@ -10,11 +10,6 @@ const highlights = [
     icon: GraduationCap,
     title: "Mentorship",
     desc: "Gain career guidance from top Educationists and IAS/IPS Officers who have shaped the nation.",
-  },
-  {
-    icon: Rocket,
-    title: "Future Growth",
-    desc: "Connect with leading institutions like Mangalayatan University & Future University.",
   },
   {
     icon: Users,
@@ -34,7 +29,7 @@ const WhyAttend = () => {
           Key Highlights of the Ceremony
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {highlights.map((item) => (
             <div
               key={item.title}
