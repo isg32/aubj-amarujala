@@ -4,15 +4,37 @@ import RegistrationForm from "./RegistrationForm";
 
 const HeroSection = () => {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(35_15%_92%)]"
-      style={{
-        backgroundImage:
-          "radial-gradient(hsl(0 0% 0% / 0.04) 1px, transparent 1px), radial-gradient(hsl(0 0% 0% / 0.03) 1px, transparent 1px)",
-        backgroundSize: "18px 18px, 32px 32px",
-        backgroundPosition: "0 0, 9px 16px",
-      }}
-    >
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(30_30%_94%)]">
+      {/* Grainy gradient base */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 75% 15%, hsl(28 80% 88%) 0%, transparent 55%), radial-gradient(ellipse 70% 70% at 20% 90%, hsl(250 60% 88%) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 90% 80%, hsl(15 75% 86%) 0%, transparent 50%), linear-gradient(135deg, hsl(35 35% 95%) 0%, hsl(250 30% 92%) 100%)",
+        }}
+      />
+      {/* Grain overlay via SVG noise */}
+      <div
+        className="absolute inset-0 opacity-[0.35] mix-blend-overlay pointer-events-none"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+        }}
+      />
+      {/* Gridlines overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, hsl(0 0% 0% / 0.06) 1px, transparent 1px), linear-gradient(to bottom, hsl(0 0% 0% / 0.06) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage:
+            "radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%)",
+        }}
+      />
+
       <div className="container relative z-10 pt-24 sm:pt-28 pb-12 sm:pb-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left: Headline */}
