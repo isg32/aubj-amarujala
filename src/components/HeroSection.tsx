@@ -4,7 +4,7 @@ import RegistrationForm from "./RegistrationForm";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(30_30%_94%)]">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(30_30%_94%)]">
       {/* Grainy gradient base */}
       <div
         className="absolute inset-0"
