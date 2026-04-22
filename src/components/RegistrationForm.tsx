@@ -160,7 +160,7 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
             <Sparkles className="w-5 h-5 text-accent animate-pulse" />
           </div>
           <p className="font-body text-foreground/70 mb-4">
-            You're officially registered for <strong className="text-primary">Bhavishya Jyoti Samman 2026</strong>.
+            You're officially registered for <strong className="text-primary">Bhavishya Jyoti 2026</strong>.
           </p>
           <p className="text-sm font-body text-foreground/60">
             Our team will reach out to you soon with further details. Get ready to shine! ✨

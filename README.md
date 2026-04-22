@@ -1,6 +1,6 @@
-# Bhavishya Jyoti Samman 2026 — Amar Ujala
+# Bhavishya Jyoti 2026 — Amar Ujala
 
-A landing & registration website for the **Amar Ujala Bhavishya Jyoti (AUBJ) Samman 2026** event, celebrating Class 10th & 12th toppers across UP, Uttarakhand, Haryana, Himachal Pradesh and J&K.
+A landing & registration website for the **Amar Ujala Bhavishya Jyoti (AUBJ) 2026** event, celebrating Class 10th & 12th toppers across UP, Uttarakhand, Haryana, Himachal Pradesh and J&K.
 
 Built with **React + Vite + TypeScript + Tailwind + shadcn/ui**.
 

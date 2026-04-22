@@ -18,7 +18,7 @@ const Register = () => {
               Register Now
             </h1>
             <p className="text-sm sm:text-base font-body text-foreground/70 px-2">
-              Fill in your details below to register for Bhavishya Jyoti Samman 2026
+              Fill in your details below to register for Bhavishya Jyoti 2026
             </p>
           </div>
 
