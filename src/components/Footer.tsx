@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <img src={logo} alt="AUBJ Logo" className="h-14 w-14 object-contain mb-4" loading="lazy" />
             <p className="font-body text-sm text-primary-foreground/70 leading-relaxed">
-              Bhavishya Jyoti Samman is a flagship initiative by Amar
+              Bhavishya Jyoti is a flagship initiative by Amar
               Ujala to recognize and celebrate academic excellence
               among students of Class 10th & 12th.
             </p>
