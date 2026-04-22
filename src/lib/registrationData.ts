@@ -4,6 +4,7 @@ export const STATES = [
   "Haryana",
   "Himachal Pradesh",
   "Jammu & Kashmir",
+  "Chandigarh",
 ] as const;
 
 export type StateName = (typeof STATES)[number];
@@ -39,4 +40,5 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Kishtwar", "Kulgam", "Kupwara", "Poonch", "Pulwama", "Rajouri", "Ramban", "Reasi", "Samba",
     "Shopian", "Srinagar", "Udhampur"
   ],
+  Chandigarh: ["Chandigarh"],
 };
