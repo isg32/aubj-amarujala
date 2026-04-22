@@ -1,6 +1,13 @@
 import logo from "@/assets/aubj-logo.png";
 
 const Footer = () => {
+  const scrollToHero = () => {
+    const hero = document.getElementById("hero");
+    if (hero) {
+      hero.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-foreground pt-14 pb-6">
       <div className="container">
@@ -23,12 +30,21 @@ const Footer = () => {
                 { label: "Why Attend?", href: "/#why-attend" },
                 { label: "About the Event", href: "/#about" },
                 { label: "Eligibility", href: "/#eligibility" },
-                { label: "Register Now", href: "/register" },
+                { label: "Register Now", onClick: scrollToHero },
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-primary-foreground/70 hover:text-accent transition-colors">
-                    {link.label}
-                  </a>
+                  {link.href ? (
+                    <a href={link.href} className="text-primary-foreground/70 hover:text-accent transition-colors">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <button
+                      onClick={link.onClick}
+                      className="text-primary-foreground/70 hover:text-accent transition-colors text-left"
+                    >
+                      {link.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

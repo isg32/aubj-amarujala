@@ -1,6 +1,13 @@
 import { ChevronRight } from "lucide-react";
 
 const EligibilitySection = () => {
+  const scrollToHero = () => {
+    const hero = document.getElementById("hero");
+    if (hero) {
+      hero.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="py-14 sm:py-20 bg-background" id="eligibility">
       <div className="container text-center max-w-3xl mx-auto">
@@ -11,12 +18,12 @@ const EligibilitySection = () => {
           Students who have scored <strong className="text-foreground">70% or above</strong> in their Class 10th or 12th Board
           Examinations (2026) from State Boards, CBSE, or ICSE are eligible.
         </p>
-        <a
-          href="/register"
+        <button
+          onClick={scrollToHero}
           className="gradient-cta inline-flex items-center gap-2 text-primary-foreground font-body font-semibold px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg shadow-cta hover:opacity-90 transition-opacity"
         >
           Register Now <ChevronRight className="w-5 h-5" />
-        </a>
+        </button>
       </div>
     </section>
   );
