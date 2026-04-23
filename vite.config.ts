@@ -5,12 +5,23 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/aubj/",
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: ["disha.amarujaladigital.com"],
     hmr: {
+      protocol: 'wss',
+      host: 'disha.amarujaladigital.com',
+      clientPort: 443,
+      path: 'aubj/',
       overlay: false,
     },
+  },
+  preview: {
+    port: 8080,
+    host: true,
+    allowedHosts: ["disha.amarujaladigital.com"],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
