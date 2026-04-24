@@ -126,37 +126,6 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
 
   useEffect(() => {
     if (!submitted) return;
-
-    // Meta Pixel - load and track only on Thank You state
-    (function (f: any, b: Document, e: string, v: string) {
-      if (f.fbq) return;
-      const n: any = (f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      });
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = true;
-      n.version = "2.0";
-      n.queue = [];
-      const t = b.createElement(e) as HTMLScriptElement;
-      t.async = true;
-      t.src = v;
-      const s = b.getElementsByTagName(e)[0];
-      s.parentNode?.insertBefore(t, s);
-    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-    (window as any).fbq("init", "2149563492511903");
-    (window as any).fbq("track", "PageView");
-
-    // noscript fallback pixel
-    const noscript = document.createElement("noscript");
-    const img = document.createElement("img");
-    img.height = 1;
-    img.width = 1;
-    img.style.display = "none";
-    img.src = "https://www.facebook.com/tr?id=2149563492511903&ev=PageView&noscript=1";
-    noscript.appendChild(img);
-    document.body.appendChild(noscript);
-
     const fire = (particleRatio: number, opts: confetti.Options) => {
       confetti({
         origin: { y: 0.6 },
