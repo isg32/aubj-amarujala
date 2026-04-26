@@ -268,12 +268,12 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
 
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1.5">
-          <Label htmlFor="pre" className="text-sm">Pre-Board %</Label>
+          <Label htmlFor="pre" className="text-sm">Announced Board Score %</Label>
           <Input id="pre" type="number" min={0} max={100} step="0.01" placeholder="e.g. 85"
             value={form.preBoardPercent} onChange={(e) => set("preBoardPercent", e.target.value)} />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="exp" className="text-sm">Expected/ Announced Board Score %</Label>
+          <Label htmlFor="exp" className="text-sm">Expected Score % (If final results are awaited)</Label>
           <Input id="exp" type="number" min={0} max={100} step="0.01" placeholder="e.g. 92"
             value={form.expectedScore} onChange={(e) => set("expectedScore", e.target.value)} />
         </div>
