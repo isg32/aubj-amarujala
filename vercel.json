@@ -1,8 +1,9 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
+    "redirects": [
+    { 
+      "source": "/", 
+      "destination": "https://disha.amarujaladigital.com/aubj/", 
+      "permanent": true 
+    }
+  ]
 }
