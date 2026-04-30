@@ -1,45 +1,28 @@
-## Plan: Add Meta Pixel sitewide via `index.html`
+## Plan: Fire Meta Pixel event on successful registration
 
-### 1. Edit `index.html`
-Add the Meta Pixel `<script>` block inside `<head>`, just before `</head>`. This ensures the pixel is present in the raw HTML served by the server, so it will be visible in **View Source** after build.
+### Goal
+Fire a Meta Pixel conversion event when the user reaches the Thank You screen (after a successful form submission), in addition to the existing sitewide `PageView`.
 
-```html
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2149563492511903');
-  fbq('track', 'PageView');
-</script>
-<!-- End Meta Pixel Code -->
+### Change
+In `src/components/RegistrationForm.tsx`, inside the existing `useEffect` that runs when `submitted` becomes `true` (currently fires confetti), also call:
+
+```ts
+if (typeof window !== "undefined" && (window as any).fbq) {
+  (window as any).fbq("track", "CompleteRegistration");
+}
 ```
 
-### 2. Add `<noscript>` fallback at top of `<body>`
-Per Lovable's HTML5 constraint, `<noscript>` containing `<img>` cannot be placed inside `<head>`. I'll put it at the very top of `<body>` (functionally identical to Meta's snippet):
+This uses the standard Meta Pixel event `CompleteRegistration`, which is the recommended event name for form sign-ups and registrations. It will appear in Meta Events Manager as a trackable conversion.
 
-```html
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2149563492511903&ev=PageView&noscript=1"
-/></noscript>
-```
+### Why this approach
+- The pixel base code is already loaded sitewide via `index.html`, so `fbq` is globally available.
+- Firing inside the `submitted` effect guarantees it only triggers once, after a successful submit (matches the Thank You screen render).
+- No duplicate `PageView` — only the conversion event is added.
 
-### 3. Remove duplicate dynamic injection in `RegistrationForm.tsx`
-The existing `useEffect` block that loads `fbevents.js` and fires `PageView` on the Thank You screen would now double-fire (once sitewide from `index.html`, once again on submission). I'll remove:
-- The IIFE that loads `fbevents.js`
-- The `fbq("init", ...)` and `fbq("track", "PageView")` calls
-- The programmatic `<noscript>` injection
+### Verification
+- Submit the form → Meta Pixel Helper shows `CompleteRegistration` firing on the Thank You screen.
+- Network tab shows a request to `facebook.com/tr?...&ev=CompleteRegistration`.
+- Events Manager → Test Events shows the event arriving.
 
-I'll keep the `useEffect` itself for the confetti animation (which still needs to fire on the Thank You screen).
-
-### Verification after deploy
-- **View Source** (Ctrl+U) on any page → you'll now see the Meta Pixel script and noscript tags in the raw HTML ✅
-- **Meta Pixel Helper** Chrome extension → icon lights up on every page, showing pixel `2149563492511903` firing `PageView`
-- **Network tab** → `fbevents.js` and `facebook.com/tr?id=2149563492511903...` load on every page
-
-Approve and I'll switch to default mode and apply the changes.
+### Optional (let me know)
+If you'd prefer a custom event name (e.g. `Lead`, or a custom `BhavishyaJyotiRegistration`) instead of `CompleteRegistration`, tell me and I'll swap it in.
