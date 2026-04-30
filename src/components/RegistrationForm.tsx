@@ -133,6 +133,9 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
 
   useEffect(() => {
     if (!submitted) return;
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "CompleteRegistration");
+    }
     const fire = (particleRatio: number, opts: confetti.Options) => {
       confetti({
         origin: { y: 0.6 },
