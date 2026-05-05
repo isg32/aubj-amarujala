@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - AUBJ</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --background: 30 25% 95%;
+      --foreground: 0 0% 13%;
+      --card: 30 20% 97%;
+      --card-foreground: 0 0% 13%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 0 0% 13%;
+      --primary: 0 85% 45%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 30 20% 92%;
+      --secondary-foreground: 0 0% 13%;
+      --muted: 30 15% 90%;
+      --muted-foreground: 0 0% 40%;
+      --accent: 30 80% 55%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 100%;
+      --border: 30 15% 85%;
+      --input: 30 15% 85%;
+      --ring: 0 85% 45%;
+      --radius: 0.75rem;
+
+      --gradient-cta: linear-gradient(135deg, hsl(0 85% 50%), hsl(30 90% 50%));
+      --gradient-stats: linear-gradient(135deg, hsl(0 85% 45%), hsl(0 75% 35%));
+      --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.08);
+      --shadow-cta: 0 8px 30px -8px hsl(0 85% 45% / 0.4);
+    }
+    
+    body {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .font-heading { font-family: 'Playfair Display', serif; }
+    .font-body { font-family: 'Inter', sans-serif; }
+
+    .gradient-cta { background: var(--gradient-cta); }
+    .gradient-stats { background: var(--gradient-stats); }
+    .shadow-card { box-shadow: var(--shadow-card); }
+    .shadow-cta { box-shadow: var(--shadow-cta); }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .5; }
+    }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        container: {
+          center: true,
+          padding: "2rem",
+          screens: { "2xl": "1400px" },
+        },
+        extend: {
+          colors: {
+            border: "hsl(var(--border))",
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            primary: { DEFAULT: "hsl(var(--primary))", foreground: "hsl(var(--primary-foreground))" },
+            accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
+            card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2149563492511903');
+    fbq('track', 'PageView');
+    fbq('track', 'CompleteRegistration');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+<body class="min-h-screen flex flex-col bg-[hsl(30_30%_94%)]" style="background-color: hsl(30, 30%, 94%);">
+  <!-- Meta Pixel noscript fallback -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2149563492511903&ev=PageView&noscript=1" /></noscript>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" style="background-color: rgba(242, 237, 230, 0.95);">
+    <div class="container flex items-center justify-between py-2.5 sm:py-3 gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="index.html">
+          <img src="./src/assets/amar-ujala-logo.png" alt="Amar Ujala Logo" class="h-9 sm:h-11 w-auto object-contain flex-shrink-0" onerror="this.src='https://via.placeholder.com/150x50?text=Amar+Ujala'" />
+        </a>
+        <div class="min-w-0">
+          <p class="hidden sm:block text-[10px] font-body font-medium uppercase tracking-wider" style="color: rgba(33, 33, 33, 0.6);">Presented by Amar Ujala</p>
+          <p class="text-xs sm:text-sm font-heading font-bold text-foreground truncate">Bhavishya Jyoti 2026</p>
+        </div>
+      </div>
+      <a href="index.html" class="gradient-cta text-white font-body font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-cta hover:opacity-90 transition-opacity flex-shrink-0 border-0 cursor-pointer no-underline">
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center pt-24 pb-12 relative overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 75% 15%, hsl(28 80% 88%) 0%, transparent 55%), radial-gradient(ellipse 70% 70% at 20% 90%, hsl(250 60% 88%) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 90% 80%, hsl(15 75% 86%) 0%, transparent 50%), linear-gradient(135deg, hsl(35 35% 95%) 0%, hsl(250 30% 92%) 100%)"></div>
+    <div class="absolute inset-0 opacity-[0.35] mix-blend-overlay pointer-events-none" style="background-image: url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>&quot;)"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(to right, hsl(0 0% 0% / 0.06) 1px, transparent 1px), linear-gradient(to bottom, hsl(0 0% 0% / 0.06) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%);"></div>
+
+    <div class="container relative z-10">
+      <div class="max-w-xl mx-auto rounded-3xl p-8 sm:p-12 shadow-cta border border-border text-center" style="background-color: rgba(247, 244, 240, 0.95); backdrop-filter: blur(10px);">
+        <div class="relative inline-block mb-6 mt-4">
+          <div class="absolute inset-0 gradient-cta rounded-full blur-xl opacity-50 animate-pulse"></div>
+          <div class="relative w-24 h-24 rounded-full gradient-cta flex items-center justify-center mx-auto shadow-cta text-white">
+            <i data-lucide="party-popper" class="w-12 h-12"></i>
+          </div>
+        </div>
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <i data-lucide="sparkles" class="w-6 h-6 text-accent animate-pulse"></i>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">Congratulations!</h1>
+          <i data-lucide="sparkles" class="w-6 h-6 text-accent animate-pulse"></i>
+        </div>
+        <p class="font-body text-lg mb-6" style="color: rgba(33, 33, 33, 0.8);">
+          You're officially registered for <strong class="text-primary">Bhavishya Jyoti 2026</strong>.
+        </p>
+        <p class="text-base font-body mb-10" style="color: rgba(33, 33, 33, 0.6);">
+          Our team will reach out to you soon with further details. Get ready to shine! ✨
+        </p>
+        <a href="index.html" class="inline-flex items-center justify-center h-12 px-8 gradient-cta font-body font-semibold rounded-full shadow-cta hover:opacity-90 transition-opacity border-0 text-white no-underline">
+          <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-foreground pt-14 pb-6" style="background-color: hsl(var(--foreground));">
+    <div class="container text-white">
+      <div class="grid md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <img src="./src/assets/aubj-logo.png" alt="AUBJ Logo" class="h-14 w-14 object-contain mb-4" loading="lazy" onerror="this.src='https://via.placeholder.com/100x100?text=AUBJ'" />
+          <p class="font-body text-sm leading-relaxed" style="color: rgba(255, 255, 255, 0.7);">
+            Bhavishya Jyoti is a flagship initiative by Amar Ujala to recognize and celebrate academic excellence among students of Class 10th & 12th.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 font-body text-sm">
+            <li><a href="index.html#why-attend" class="transition-colors" style="color: rgba(255, 255, 255, 0.7);">Why Attend?</a></li>
+            <li><a href="index.html#about" class="transition-colors" style="color: rgba(255, 255, 255, 0.7);">About the Event</a></li>
+            <li><a href="index.html#eligibility" class="transition-colors" style="color: rgba(255, 255, 255, 0.7);">Eligibility</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-4">Contact</h4>
+          <ul class="space-y-2.5 font-body text-sm" style="color: rgba(255, 255, 255, 0.7);">
+            <li>Contact: <a href="tel:18001211166" class="transition-colors" style="color: inherit;">1800 121 1166</a></li>
+            <li>Email: <a href="mailto:events@bs.amarujala.com" class="transition-colors" style="color: inherit;">events@bs.amarujala.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t pt-6 flex flex-col md:flex-row justify-between items-center gap-2" style="border-color: rgba(255, 255, 255, 0.1);">
+        <p class="text-xs font-body" style="color: rgba(255, 255, 255, 0.5);">© 2026 Amar Ujala. All rights reserved.</p>
+        <p class="text-xs font-body" style="color: rgba(255, 255, 255, 0.5);">Presented by <span style="color: rgba(255, 255, 255, 0.7);">Amar Ujala</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Fire Confetti
+    window.onload = function() {
+      const fire = (particleRatio, opts) => {
+        confetti({
+          origin: { y: 0.6 },
+          particleCount: Math.floor(200 * particleRatio),
+          spread: 70,
+          startVelocity: 35,
+          colors: ["#dc2626", "#f59e0b", "#fbbf24", "#ffffff", "#7c3aed"],
+          ...opts,
+        });
+      };
+      fire(0.25, { spread: 26, startVelocity: 55 });
+      fire(0.2, { spread: 60 });
+      fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+      fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+      fire(0.1, { spread: 120, startVelocity: 45 });
+    };
+  </script>
+</body>
+</html>
