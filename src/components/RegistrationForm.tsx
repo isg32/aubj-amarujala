@@ -135,6 +135,7 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
     if (!submitted) return;
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "CompleteRegistration");
+      console.log('Meta Pixel: CompleteRegistration event triggered');
     }
     const fire = (particleRatio: number, opts: confetti.Options) => {
       confetti({
