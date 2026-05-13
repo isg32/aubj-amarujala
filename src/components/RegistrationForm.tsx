@@ -24,7 +24,6 @@ type FormState = {
   district: string;
   preBoardPercent: string;
   expectedScore: string;
-  actualResult: string;
   consent: boolean;
 };
 
@@ -40,7 +39,6 @@ const initialState: FormState = {
   district: "",
   preBoardPercent: "",
   expectedScore: "",
-  actualResult: "",
   consent: false,
 };
 
@@ -77,11 +75,7 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
     }
     if (form.expectedScore) {
       const exp = Number(form.expectedScore);
-      if (isNaN(exp) || exp < 0 || exp > 100) return "Expected/Announced Board Score % must be between 0 and 100.";
-    }
-    if (form.actualResult) {
-      const act = Number(form.actualResult);
-      if (isNaN(act) || act < 0 || act > 100) return "Actual Result % must be between 0 and 100.";
+      if (isNaN(exp) || exp < 0 || exp > 100) return "Actual Result % must be between 0 and 100.";
     }
     if (!form.consent) return "Please provide your consent to proceed.";
     return null;
@@ -112,7 +106,6 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
           district: form.district,
           preBoardPercent: form.preBoardPercent,
           expectedScore: form.expectedScore,
-          actualResult: form.actualResult,
           consent: form.consent,
           submittedAt: new Date().toISOString(),
         }),
@@ -283,16 +276,10 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
             value={form.preBoardPercent} onChange={(e) => set("preBoardPercent", e.target.value)} />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="exp" className="text-sm">Expected Score % (If final results are awaited)</Label>
+          <Label htmlFor="exp" className="text-sm">Actual Result %</Label>
           <Input id="exp" type="number" min={0} max={100} step="0.01" placeholder="e.g. 92"
             value={form.expectedScore} onChange={(e) => set("expectedScore", e.target.value)} />
         </div>
-      </div>
-
-      <div className="space-y-1.5">
-        <Label htmlFor="actual" className="text-sm">Actual Result %</Label>
-        <Input id="actual" type="number" min={0} max={100} step="0.01" placeholder="e.g. 95"
-          value={form.actualResult} onChange={(e) => set("actualResult", e.target.value)} />
       </div>
 
       <div className="pt-1">
