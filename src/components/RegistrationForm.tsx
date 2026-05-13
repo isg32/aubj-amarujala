@@ -276,16 +276,10 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
             value={form.preBoardPercent} onChange={(e) => set("preBoardPercent", e.target.value)} />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="exp" className="text-sm">Expected Score % (If final results are awaited)</Label>
+          <Label htmlFor="exp" className="text-sm">Actual Result %</Label>
           <Input id="exp" type="number" min={0} max={100} step="0.01" placeholder="e.g. 92"
             value={form.expectedScore} onChange={(e) => set("expectedScore", e.target.value)} />
         </div>
-      </div>
-
-      <div className="space-y-1.5">
-        <Label htmlFor="actual" className="text-sm">Actual Result %</Label>
-        <Input id="actual" type="number" min={0} max={100} step="0.01" placeholder="e.g. 95"
-          value={form.actualResult} onChange={(e) => set("actualResult", e.target.value)} />
       </div>
 
       <div className="pt-1">
