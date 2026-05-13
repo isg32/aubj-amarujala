@@ -27,8 +27,7 @@ var HEADERS = [
   'Email',
   'State',
   'District',
-  'Pre-Board %',
-  'Expected Board Score %',
+  'Announced Board Score %',
   'Actual Result %',
   'Confirmed Accurate',
   'Agreed To Terms'
@@ -91,7 +90,6 @@ function doPost(e) {
       sanitize_(data.district),
       sanitize_(data.preBoardPercent),
       sanitize_(data.expectedScore),
-      sanitize_(data.actualResult),
       data.confirmAccurate ? 'Yes' : 'No',
       data.agreeTerms ? 'Yes' : 'No'
     ]);
