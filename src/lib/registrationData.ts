@@ -11,13 +11,13 @@ export type StateName = (typeof STATES)[number];
 
 export const DISTRICTS: Record<StateName, string[]> = {
   "Uttar Pradesh": [
-    "Agra", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", "Ayodhya",
-    "Azamgarh", "Baghpat", "Bahraich", "Balrampur", "Banda", "Barabanki",
+    "Agra", "Aligarh", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", "Ayodhya",
+    "Azamgarh", "Baghpat", "Bahraich", "Balrampur", "Ballia", "Banda", "Barabanki",
     "Basti", "Bhadohi", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria",
     "Etah", "Etawah", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam Buddha Nagar",
-    "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hapur", "Hardoi", "Hathras", "Jalaun", "Jhansi", "Jaunpur",
+    "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hapur", "Hardoi", "Hathras", "Jalaun", "Jhansi", "Jaunpur",
     "Kannauj", "Kanpur Dehat", "Kanpur Nagar", "Kasganj", "Kaushambi", "Kheri", "Kushinagar",
-    "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur",
+    "Lalitpur", "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur",
     "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Raebareli", "Rampur", "Saharanpur",
     "Sambhal", "Sant Kabir Nagar", "Shahjahanpur", "Shamli", "Shrawasti", "Siddharthnagar", "Sitapur",
     "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"
@@ -38,7 +38,7 @@ export const DISTRICTS: Record<StateName, string[]> = {
   "Jammu & Kashmir": [
     "Anantnag", "Bandipora", "Baramulla", "Budgam", "Doda", "Ganderbal", "Jammu", "Kathua",
     "Kishtwar", "Kulgam", "Kupwara", "Poonch", "Pulwama", "Rajouri", "Ramban", "Reasi", "Samba",
-    "Shopian", "Srinagar"
+    "Shopian", "Srinagar", "Udhampur"
   ],
   Chandigarh: ["Chandigarh"],
 };
