@@ -27,7 +27,7 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Pauri Garhwal", "Pithoragarh", "Rudraprayag", "Tehri Garhwal", "Udham Singh Nagar", "Uttarkashi"
   ],
   Haryana: [
-    "Ambala", "Bhiwani", "Charkhi Dadri", "Faridabad", "Fatehabad", "Gurugram", "Hisar", "Jhajjar",
+    "Ambala", "Bhiwani", "Charkhi Dadri", "Fatehabad", "Gurugram", "Hisar", "Jhajjar",
     "Jind", "Kaithal", "Karnal", "Kurukshetra", "Mahendragarh", "Nuh", "Palwal", "Panchkula",
     "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamunanagar"
   ],
