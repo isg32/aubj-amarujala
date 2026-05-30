@@ -4,7 +4,6 @@ export const STATES = [
   "Haryana",
   "Himachal Pradesh",
   "Jammu & Kashmir",
-  "Chandigarh",
 ] as const;
 
 export type StateName = (typeof STATES)[number];
