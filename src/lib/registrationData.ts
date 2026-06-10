@@ -10,7 +10,7 @@ export type StateName = (typeof STATES)[number];
 
 export const DISTRICTS: Record<StateName, string[]> = {
   "Uttar Pradesh": [
-    "Agra", "Aligarh", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya",
+    "Agra", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya",
     "Azamgarh", "Baghpat", "Barabanki",
     "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria",
     "Etah", "Farrukhabad", "Gautam Buddha Nagar",
@@ -22,8 +22,8 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Unnao", "Varanasi"
   ],
   Uttarakhand: [
-    "Almora", "Bageshwar", "Chamoli", "Champawat", "Dehradun", "Haridwar", "Nainital",
-    "Pauri Garhwal", "Pithoragarh", "Rudraprayag", "Tehri Garhwal", "Udham Singh Nagar", "Uttarkashi"
+    "Almora", "Bageshwar", "Champawat", "Dehradun", "Haridwar", "Nainital",
+    "Pithoragarh", "Udham Singh Nagar"
   ],
   Haryana: [
     "Bhiwani", "Charkhi Dadri", "Fatehabad", "Gurugram", "Hisar", "Jhajjar",
