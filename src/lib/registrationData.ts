@@ -22,7 +22,7 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Unnao", "Varanasi"
   ],
   Uttarakhand: [
-    "Almora", "Bageshwar", "Champawat", "Dehradun", "Nainital",
+    "Bageshwar", "Champawat", "Dehradun", "Nainital",
     "Pithoragarh", "Roorkee", "Udham Singh Nagar"
   ],
   Haryana: [
