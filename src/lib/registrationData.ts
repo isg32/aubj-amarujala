@@ -22,7 +22,7 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Unnao", "Varanasi"
   ],
   Uttarakhand: [
-    "Almora", "Bageshwar", "Champawat", "Dehradun", "Nainital",
+    "Bageshwar", "Champawat", "Dehradun", "Nainital",
     "Pithoragarh", "Roorkee", "Udham Singh Nagar"
   ],
   Haryana: [
@@ -35,7 +35,7 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Shimla", "Sirmaur", "Solan", "Una"
   ],
   "Jammu & Kashmir": [
-    "Anantnag", "Bandipora", "Baramulla", "Budgam", "Doda", "Ganderbal", "Jammu", "Kathua",
+    "Anantnag", "Bandipora", "Baramulla", "Budgam", "Doda", "Ganderbal", "Jammu",
     "Kishtwar", "Kulgam", "Kupwara", "Poonch", "Pulwama", "Rajouri", "Ramban", "Reasi", "Samba",
     "Shopian", "Srinagar", "Udhampur"
   ],
