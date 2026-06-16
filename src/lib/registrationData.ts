@@ -10,10 +10,10 @@ export type StateName = (typeof STATES)[number];
 
 export const DISTRICTS: Record<StateName, string[]> = {
   "Uttar Pradesh": [
-    "Agra", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya",
+    "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya",
     "Azamgarh", "Baghpat", "Barabanki",
-    "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria",
-    "Etah", "Farrukhabad", "Gonda", "Gorakhpur",
+    "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Deoria",
+    "Etah", "Farrukhabad", "Gorakhpur",
     "Hamirpur", "Hardoi", "Hathras", "Jalaun",
     "Kannauj", "Kanpur Dehat", "Kasganj", "Kaushambi", "Kheri", "Kushinagar",
     "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur",
@@ -32,11 +32,9 @@ export const DISTRICTS: Record<StateName, string[]> = {
   ],
   "Himachal Pradesh": [
     "Bilaspur", "Chamba", "Hamirpur", "Kangra", "Kinnaur", "Kullu", "Lahaul & Spiti", "Mandi",
-    "Shimla", "Sirmaur", "Solan", "Una"
+    "Shimla", "Sirmaur", "Una"
   ],
   "Jammu & Kashmir": [
-    "Anantnag", "Bandipora", "Baramulla", "Budgam", "Doda", "Ganderbal", "Jammu",
-    "Kishtwar", "Kulgam", "Kupwara", "Poonch", "Pulwama", "Rajouri", "Ramban", "Reasi", "Samba",
-    "Shopian", "Srinagar", "Udhampur"
+    "Jammu", "Reasi", "Udhampur"
   ],
 };
