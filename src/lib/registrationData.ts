@@ -26,12 +26,12 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Pithoragarh", "Roorkee", "Udham Singh Nagar"
   ],
   Haryana: [
-    "Bhiwani", "Charkhi Dadri", "Fatehabad", "Gurugram", "Hisar", "Jhajjar",
+    "Bhiwani", "Charkhi Dadri", "Fatehabad", "Gurugram", "Hisar",
     "Jind", "Kaithal", "Karnal", "Kurukshetra", "Mahendragarh", "Nuh", "Palwal",
     "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamunanagar"
   ],
   "Himachal Pradesh": [
-    "Bilaspur", "Chamba", "Hamirpur", "Kangra", "Kinnaur", "Kullu", "Lahaul & Spiti", "Mandi",
+    "Bilaspur", "Hamirpur", "Kangra", "Kinnaur", "Kullu", "Lahaul & Spiti", "Mandi",
     "Shimla", "Sirmaur", "Una"
   ],
   "Jammu & Kashmir": [
