@@ -12,11 +12,11 @@ export const DISTRICTS: Record<StateName, string[]> = {
   "Uttar Pradesh": [
     "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya",
     "Azamgarh", "Baghpat", "Barabanki",
-    "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Deoria",
-    "Etah", "Farrukhabad", "Gorakhpur",
-    "Hamirpur", "Hardoi", "Hathras", "Jalaun",
+    "Basti", "Bijnor", "Budaun", "Chandauli", "Deoria",
+    "Farrukhabad", "Gorakhpur",
+    "Hamirpur", "Hardoi", "Jalaun",
     "Kannauj", "Kanpur Dehat", "Kasganj", "Kaushambi", "Kheri", "Kushinagar",
-    "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur",
+    "Maharajganj", "Mahoba", "Mau", "Meerut", "Mirzapur",
     "Moradabad", "Muzaffarnagar", "Pratapgarh", "Raebareli", "Rampur", "Saharanpur",
     "Sambhal", "Sant Kabir Nagar", "Shamli", "Shrawasti", "Siddharthnagar",
     "Unnao", "Varanasi"
