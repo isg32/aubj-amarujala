@@ -15,17 +15,17 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Basti", "Bijnor", "Budaun", "Chandauli", "Deoria",
     "Farrukhabad", "Gorakhpur",
     "Hamirpur", "Hardoi",
-    "Kannauj", "Kanpur Dehat", "Kasganj", "Kaushambi", "Kheri", "Kushinagar",
+    "Kanpur Dehat", "Kaushambi", "Kheri", "Kushinagar",
     "Maharajganj", "Mahoba", "Meerut",
-    "Moradabad", "Muzaffarnagar", "Pratapgarh", "Raebareli", "Rampur", "Saharanpur",
-    "Sambhal", "Sant Kabir Nagar", "Shamli", "Shrawasti", "Siddharthnagar"
+    "Moradabad", "Pratapgarh", "Raebareli", "Rampur",
+    "Sambhal", "Sant Kabir Nagar", "Shrawasti", "Siddharthnagar"
   ],
   Uttarakhand: [
-    "Bageshwar", "Champawat", "Dehradun", "Nainital",
-    "Pithoragarh", "Roorkee", "Udham Singh Nagar"
+    "Bageshwar", "Champawat", "Nainital",
+    "Pithoragarh", "Udham Singh Nagar"
   ],
   Haryana: [
-    "Bhiwani", "Charkhi Dadri", "Fatehabad", "Gurugram", "Hisar",
+    "Bhiwani", "Fatehabad", "Gurugram", "Hisar",
     "Jind", "Kaithal", "Karnal", "Kurukshetra", "Mahendragarh", "Nuh", "Palwal",
     "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamunanagar"
   ],
