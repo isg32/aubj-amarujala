@@ -13,9 +13,9 @@ export const DISTRICTS: Record<StateName, string[]> = {
     "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha",
     "Baghpat", "Barabanki",
     "Basti", "Bijnor", "Budaun", "Chandauli", "Deoria",
-    "Farrukhabad", "Gorakhpur",
-    "Hamirpur", "Hardoi",
-    "Kanpur Dehat", "Kaushambi", "Kheri", "Kushinagar",
+    "Farrukhabad",
+    "Hamirpur",
+    "Kanpur Dehat", "Kaushambi", "Kheri",
     "Maharajganj", "Mahoba", "Meerut",
     "Moradabad", "Pratapgarh", "Raebareli", "Rampur",
     "Sambhal", "Sant Kabir Nagar", "Shrawasti", "Siddharthnagar"
