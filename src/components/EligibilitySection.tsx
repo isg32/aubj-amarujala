@@ -20,9 +20,9 @@ const EligibilitySection = () => {
         </p>
         <button
           onClick={scrollToHero}
-          className="gradient-cta inline-flex items-center gap-2 text-primary-foreground font-body font-semibold px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg shadow-cta hover:opacity-90 transition-opacity"
+          className="bg-muted inline-flex items-center gap-2 text-muted-foreground font-body font-semibold px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg cursor-default"
         >
-          Register Now <ChevronRight className="w-5 h-5" />
+          Registrations Closed
         </button>
       </div>
     </section>

@@ -30,7 +30,7 @@ const Footer = () => {
                 { label: "Why Attend?", href: "/#why-attend" },
                 { label: "About the Event", href: "/#about" },
                 { label: "Eligibility", href: "/#eligibility" },
-                { label: "Register Now", onClick: scrollToHero },
+                { label: "Registrations Closed", onClick: scrollToHero },
               ].map((link) => (
                 <li key={link.label}>
                   {link.href ? (

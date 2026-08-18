@@ -20,9 +20,9 @@ const Navbar = () => {
         </div>
         <button
           onClick={scrollToHero}
-          className="gradient-cta text-primary-foreground font-body font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-cta hover:opacity-90 transition-opacity flex-shrink-0"
+          className="bg-muted text-muted-foreground font-body font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm flex-shrink-0 cursor-default"
         >
-          Register
+          Registrations Closed
         </button>
       </div>
     </nav>
