@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
-import { Send, Sparkles, PartyPopper } from "lucide-react";
+import { Send, Sparkles, PartyPopper, Ban } from "lucide-react";
 import { STATES, DISTRICTS, type StateName } from "@/lib/registrationData";
 
 // 🔧 Replace with the deployed Google Apps Script Web App URL
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzUPTiLTJg6l7lkzVjg5D_QD2NZtvILKZ7Ukmr8JX2lOv9ogR9TJD495yKQoA-65YIN/exec";
+
+const REGISTRATIONS_CLOSED = true;
 
 type FormState = {
   studentName: string;
@@ -83,6 +85,10 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (REGISTRATIONS_CLOSED) {
+      toast({ title: "Registrations Closed", description: "New registrations are no longer being accepted.", variant: "destructive" });
+      return;
+    }
     const err = validate();
     if (err) {
       toast({ title: "Please review the form", description: err, variant: "destructive" });
@@ -174,6 +180,29 @@ const RegistrationForm = ({ variant = "card" }: Props) => {
   }
 
   const districts = form.state ? DISTRICTS[form.state] : [];
+
+  if (REGISTRATIONS_CLOSED) {
+    return (
+      <div className={containerClass + " text-center relative overflow-hidden"}>
+        <div className="absolute inset-0 gradient-cta opacity-5 pointer-events-none" />
+        <div className="relative">
+          <div className="relative inline-block mb-4">
+            <div className="absolute inset-0 gradient-cta rounded-full blur-xl opacity-40" />
+            <div className="relative w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto">
+              <Ban className="w-10 h-10 text-muted-foreground" />
+            </div>
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">Registrations Closed</h3>
+          <p className="font-body text-foreground/70 mb-2">
+            Thank you for your overwhelming response.
+          </p>
+          <p className="text-sm font-body text-foreground/60">
+            Registrations for Bhavishya Jyoti 2026 are now closed. Stay tuned for updates!
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className={containerClass + " space-y-4"}>
